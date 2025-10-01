@@ -1,0 +1,472 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --cor-primaria: #4f46e5;
+  --cor-secundaria: #7c3aed;
+  --cor-fundo: #0f172a;
+  --cor-texto: #e2e8f0;
+  --cor-texto-claro: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+section {
+  padding: 60px 0;
+}
+
+
+
+/* --- Cabeçalho e Navegação --- */
+.header {
+    background-color: var(--cor-texto);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    /* Efeito de luz sutil no canto direito */
+    
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #333;
+  
+}
+
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links li {
+  margin-left: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgb(11, 10, 9);
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #2ea4e9;
+}
+
+.cta-button {
+  color: rgb(255, 255, 255, 00.5);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+/* --- Menu Mobile (CSS-Only) --- */
+#menu-toggle {
+  display: none;
+}
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+/* --- Seção Hero --- */
+.hero {
+  background-image: linear-gradient(
+      rgba(132, 131, 131, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("./img_fundo/imagem-fundo.png");
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  color: white;
+  position: relative;
+  /* aqui eu resolvi usar a imagem neste modelo para conseguir estilizar mais ela,
+            eu uso o cinza para manter a consentração em pontos especificos seguindo ux ui, 
+            referencia  https://medium.com/ui-lab-school/motivos-para-projetar-sem-cor-4c29343a60da */
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0;
+  padding: 0 5%; /* Added padding for spacing */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Added for better readability */
+}
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.hero-button {
+  /* Estilos do botão (do seu .hero-button a) */
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: var(--cor-texto-claro) ;
+  color: var(--cor-fundo);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  
+  /* Estilos da animação (do seu .hero-button p) */
+  font-size: 1rem;
+  white-space: nowrap; /* Mantém o texto em uma linha */
+  overflow: hidden; /* Esconde o texto que ainda não foi revelado */
+  
+ 
+  border-right: 3px solid var(--cor-texto); /* Simula o cursor */
+  width: 0; 
+
+
+  animation: 
+    digitar 1s steps(20) 1s 1 normal both,
+    piscar 700ms step-end infinite;
+}
+
+/* Efeito de hover para o botão */
+.hero-button:hover {
+  background-color: var(--cor-primaria);
+  color: white;
+}
+
+/* @keyframes para a animação de "digitar" */
+@keyframes digitar {
+  from {
+    width: 0;
+  }
+  to {
+    /* Ajuste este valor se o texto for cortado no final */
+    width: 25ch; 
+  }
+}
+
+/* @keyframes para o cursor piscando */
+@keyframes piscar {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--cor-primaria);
+  }
+}
+
+
+.hero-socials {
+  position: absolute;
+  right: 40px; /* Distância da borda direita */
+  bottom: 40px; /* Distância da borda inferior */
+  text-align: right;
+}
+
+.hero-socials p {
+  margin: 0 0 10px 0; /* Margem abaixo do texto */
+  font-size: 1rem;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra para melhorar leitura */
+}
+
+.hero-socials .icons-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.hero-socials a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: white;
+  transition: transform 0.2s;
+}
+
+.hero-socials a:hover {
+  transform: scale(1.1);
+}
+
+.hero-socials svg {
+  width: 22px;
+  height: 22px;
+}
+
+.whatsapp-link {
+  background-color: #25d366;
+}
+
+.instagram-link {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+
+/* --- Seção de Títulos --- */
+.section-titulo {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-titulo h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.section-titulo p {
+  color: #666;
+}
+
+/* --- Seção Serviços --- */
+#servicos {
+  background-color: rgb(192, 192, 192);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  background-color: rgb(220, 220, 220);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden; /* Garante que a imagem respeite as bordas arredondadas */
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.service-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-card-content {
+  padding: 25px;
+  text-align: center;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+/* --- Seção Agendamento (Versão Atualizada) --- */
+#agendamento {
+    background-color: #ffffff; /* Fundo branco para a seção */
+}
+
+.form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600; /* Deixando o texto do label um pouco mais forte */
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccd0d5;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s; /* Transição suave */
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria); /* Usando sua variável de cor */
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); /* Sombra de foco sutil */
+}
+
+.form-submit {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--cor-primaria); /* Usando sua variável de cor */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-submit:hover {
+    background-color: var(--cor-secundaria); /* Usando sua variável de cor */
+}
+
+/* --- ESTILOS ESSENCIAIS PARA VALIDAÇÃO --- */
+
+/* Estilo para destacar campos com erro (borda vermelha) */
+.campo-erro {
+    border-color: #e54646 !important; /* Cor vermelha para indicar erro */
+}
+
+/* Estilo para a caixa da mensagem de erro */
+#mensagem-erro {
+    color: #d8000c; /* Cor do texto */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 12px;
+    background-color: #ffcdd2; /* Fundo avermelhado claro */
+    border: 1px solid #e57373; /* Borda vermelha sutil */
+    border-radius: 8px;
+}
+
+/* --- Rodapé --- */
+.footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.footer p {
+  margin-bottom: 10px;
+}
+.footer-contact a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 10px;
+}
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+@keyframes texto {
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes write {
+  20% {
+    width: 20ch;
+  }
+  70% {
+    width: 20ch;
+  }
+  85% {
+    width: 0;
+  }
+  100% {
+    width: 0;
+  }
+}
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+    text-align: center;
+  }
+  .menu-icon {
+    display: block;
+  }
+  #menu-toggle:checked ~ .navbar .nav-links {
+    display: flex;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.hero-button {
+  /* Estilos do botão (do seu .hero-button a) */
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: var(--cor-texto-claro) ;
+  color: var(--cor-fundo);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  
+}
