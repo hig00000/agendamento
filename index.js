@@ -2,7 +2,7 @@
         const data_evento = document.getElementById('data_evento');
         const servico = document.getElementById('servico');
         const mensagem = document.getElementById('mensagem');
-        const telefone = '5511958085150'; // Número de telefone para o qual a mensagem será enviada
+        const telefone = '5511960421437'; // Número de telefone para o qual a mensagem será enviada
 
         // Função para impedir que o usuário digite números no campo de nome
         nome.addEventListener('input', function () {
@@ -56,7 +56,7 @@
                 const servico_Valor = servico.value;
                 const mensagem_Valor = mensagem.value;
 
-                const texto = `Olá, meu nome é ${nome_Valor}, quero marcar uma visita no dia ${data_evento_valor}, vou querer o serviço de ${servico_Valor}, alguns detalhes: ${mensagem_Valor}`;
+                const texto = `Olá, meu nome é ${nome_Valor}, quero marcar uma visita no dia ${data_evento_valor}, vou querer o serviço de ${servico_Valor}. alguns detalhes: ${mensagem_Valor}`;
                 const textoformatado = encodeURIComponent(texto);
                 const url = `https://wa.me/${telefone}?text=${textoformatado}`;
 
