@@ -38,17 +38,14 @@ section {
   padding: 60px 0;
 }
 
-
-
 /* --- Cabeçalho e Navegação --- */
 .header {
-    background-color: var(--cor-texto);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-    /* Efeito de luz sutil no canto direito */
-    
+  background-color: var(--cor-texto);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  /* Efeito de luz sutil no canto direito */
 }
 
 .navbar {
@@ -56,7 +53,6 @@ section {
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
-  
 }
 
 .logo {
@@ -65,9 +61,7 @@ section {
   font-weight: 700;
   text-decoration: none;
   color: #333;
-  
 }
-
 
 .nav-links {
   display: flex;
@@ -113,7 +107,7 @@ section {
       rgba(132, 131, 131, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    url("./img_fundo/imagem-fundo.png");
+    url("./img-fundo/imagem-fundo.png");
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -149,25 +143,22 @@ section {
   /* Estilos do botão (do seu .hero-button a) */
   display: inline-block;
   padding: 12px 25px;
-  background-color: var(--cor-texto-claro) ;
+  background-color: var(--cor-texto-claro);
   color: var(--cor-fundo);
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
-  
+
   /* Estilos da animação (do seu .hero-button p) */
   font-size: 1rem;
   white-space: nowrap; /* Mantém o texto em uma linha */
   overflow: hidden; /* Esconde o texto que ainda não foi revelado */
-  
- 
+
   border-right: 3px solid var(--cor-texto); /* Simula o cursor */
-  width: 0; 
+  width: 0;
 
-
-  animation: 
-    digitar 1s steps(20) 1s 1 normal both,
+  animation: digitar 1s steps(20) 1s 1 normal both,
     piscar 700ms step-end infinite;
 }
 
@@ -184,20 +175,20 @@ section {
   }
   to {
     /* Ajuste este valor se o texto for cortado no final */
-    width: 25ch; 
+    width: 25ch;
   }
 }
 
 /* @keyframes para o cursor piscando */
 @keyframes piscar {
-  from, to {
+  from,
+  to {
     border-color: transparent;
   }
   50% {
     border-color: var(--cor-primaria);
   }
 }
-
 
 .hero-socials {
   position: absolute;
@@ -309,83 +300,83 @@ section {
 }
 /* --- Seção Agendamento (Versão Atualizada) --- */
 #agendamento {
-    background-color: #ffffff; /* Fundo branco para a seção */
+  background-color: #ffffff; /* Fundo branco para a seção */
 }
 
 .form-container {
-    max-width: 700px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600; /* Deixando o texto do label um pouco mais forte */
-    color: #333;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600; /* Deixando o texto do label um pouco mais forte */
+  color: #333;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccd0d5;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.2s, box-shadow 0.2s; /* Transição suave */
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccd0d5;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s; /* Transição suave */
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    outline: none;
-    border-color: var(--cor-primaria); /* Usando sua variável de cor */
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); /* Sombra de foco sutil */
+  outline: none;
+  border-color: var(--cor-primaria); /* Usando sua variável de cor */
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); /* Sombra de foco sutil */
 }
 
 .form-submit {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    background-color: var(--cor-primaria); /* Usando sua variável de cor */
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: var(--cor-primaria); /* Usando sua variável de cor */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .form-submit:hover {
-    background-color: var(--cor-secundaria); /* Usando sua variável de cor */
+  background-color: var(--cor-secundaria); /* Usando sua variável de cor */
 }
 
 /* --- ESTILOS ESSENCIAIS PARA VALIDAÇÃO --- */
 
 /* Estilo para destacar campos com erro (borda vermelha) */
 .campo-erro {
-    border-color: #e54646 !important; /* Cor vermelha para indicar erro */
+  border-color: #e54646 !important; /* Cor vermelha para indicar erro */
 }
 
 /* Estilo para a caixa da mensagem de erro */
 #mensagem-erro {
-    color: #d8000c; /* Cor do texto */
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
-    padding: 12px;
-    background-color: #ffcdd2; /* Fundo avermelhado claro */
-    border: 1px solid #e57373; /* Borda vermelha sutil */
-    border-radius: 8px;
+  color: #d8000c; /* Cor do texto */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 12px;
+  background-color: #ffcdd2; /* Fundo avermelhado claro */
+  border: 1px solid #e57373; /* Borda vermelha sutil */
+  border-radius: 8px;
 }
 
 /* --- Rodapé --- */
@@ -462,11 +453,10 @@ section {
   /* Estilos do botão (do seu .hero-button a) */
   display: inline-block;
   padding: 12px 25px;
-  background-color: var(--cor-texto-claro) ;
+  background-color: var(--cor-texto-claro);
   color: var(--cor-fundo);
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
-  
 }
